@@ -442,7 +442,7 @@ def train(
     all_metrics["steps_epoch"][cur_step] = epoch
 
     to_save = {k: dict(v) if isinstance(v, defaultdict) else v for k, v in
-               all_metrics.items()}  # to avoid issues with lambda
+    all_metrics.items()}  # to avoid issues with lambda
     torch.save(to_save, f"{checkpoint_path}/{exp_name}.pth")
 
     return all_metrics
